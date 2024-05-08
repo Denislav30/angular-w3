@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="note-form">
+      <mat-form-field appearance="outline">
+        <mat-label>Заглавие на бележката</mat-label>
+        <input matInput [(ngModel)]="noteTitle" (ngModelChange)="validateTitle()" required minlength="5">
+        <mat-error *ngIf="titleInvalid">Минимално количество символи 5</mat-error>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+        <mat-label>Съдържание на бележката</mat-label>
+        <textarea matInput [(ngModel)]="noteContent" (ngModelChange)="validateContent()" required minlength="7"></textarea>
+        <mat-error *ngIf="contentInvalid">Минимално количество символи 7</mat-error>
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" (click)="saveNote()">Съхрани Бележката</button>
+    </div>
+  
+    <div class="vertical-line"></div>
+  
+    <div class="existing-notes">
+      <mat-list>
+        <mat-list-item *ngFor="let note of notes; let i = index">
+          {{ note.title }}
+          <button mat-icon-button color="primary" (click)="editNote(i)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="deleteNote(i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>

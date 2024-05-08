@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+  }
+  
+  .note-form {
+    flex: 1;
+  }
+  
+  .vertical-line {
+    border-left: 2px solid #000;
+    margin: 0 20px;
+    height: 100%;
+  }
+  
+  .existing-notes {
+    flex: 1;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  textarea {
+    min-height: 100px;
+  }
